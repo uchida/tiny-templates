@@ -1,0 +1,64 @@
+\documentclass[11pt,dvipdfmx]{jsarticle}
+\usepackage{textcomp}
+% Computer Modern
+\usepackage{type1cm}
+% MathTime Pro 2 Lite
+%\usepackage{times}
+%\usepackage[lite,subscriptcorrection,slantedGreek,nofontinfo]{mtpro2}
+%\usepackage[scaled=0.92]{helvet}
+%\usepackage[scaled]{couriers}
+% Palatino
+%\usepackage{mathpazo}
+\usepackage{amsmath,amssymb}
+% extra math packages
+\usepackage{upgreek}
+\usepackage{bm}
+% to use Open Type font
+\usepackage[deluxe,expert,bold]{otf}
+\renewcommand{\headfont}{\bfseries\sffamily}
+% for figures
+\usepackage{graphicx}
+\usepackage{subfigure}
+% for color
+\usepackage[usenames]{color}
+% for table
+\usepackage{booktabs}
+% hyperref for amsmath, amssymb
+\let\equation\gather\let\endequation\endgather
+% for pdf with hyperlink
+\usepackage[breaklinks=true,bookmarksnumbered=true,bookmarksopen=true,%
+colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black,%
+hyperfigures=true]{hyperref}
+\ifnum 42146=\euc"A4A2
+    \AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
+\else
+    \AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+\fi
+% commands
+\newcommand{\dif}[2]{\frac{d{#1}}{d{#2}}}
+\newcommand{\pdif}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\const}{\text{const}}
+\newcommand{\eq}[1]{式~\eqref{#1}}
+\newcommand{\fig}[1]{図~\ref{#1}}
+% operators
+\DeclareMathOperator{\real}{Re}
+\DeclareMathOperator{\imag}{Im}
+\DeclareMathOperator{\sign}{sgn}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Tr}{Tr}
+% eliptic functions
+\DeclareMathOperator{\sn}{sn}
+\DeclareMathOperator{\cn}{cn}
+\DeclareMathOperator{\tn}{tn}
+\DeclareMathOperator{\am}{am}
+\DeclareMathOperator{\dn}{dn}
+
+\begin{document}
+\title{}
+\author{}
+%\date{}
+
+\maketitle
+
+
+\end{document}
