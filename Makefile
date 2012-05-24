@@ -19,7 +19,7 @@ CPPFLAGS += $(addprefix -I,$(include_dirs))
 default: all
 
 # include config.mk for modules
-include $(addsuffix /config.mk,$(modules))
+-include $(addsuffix /config.mk,$(modules))
 
 # targets
 #programs +=
@@ -42,7 +42,7 @@ clean:
 ifneq "$(MAKECMDGOALS)" "clean"
  -include $(dependencies)
 endif
-GCC = gcc
+GCC := gcc
 %.d: %.c
 	$(GCC) -MM -MD -MP $(CPPFLAGS) $< -o $@
 
