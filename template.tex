@@ -1,6 +1,5 @@
 \documentclass[11pt,dvipdfmx]{jsarticle}
 \usepackage{textcomp}
-% Computer Modern
 \usepackage{type1cm}
 % MathTime Pro 2 Lite
 %\usepackage{times}
@@ -9,31 +8,32 @@
 %\usepackage[scaled]{couriers}
 % Palatino
 %\usepackage{mathpazo}
+%\usepackage[scaled=0.95]{helvet}
+%\usepackage[scaled]{couriers}
 \usepackage{amsmath,amssymb}
-% extra math packages
-\usepackage{upgreek}
-\usepackage{bm}
-% to use Open Type font
-\usepackage[deluxe,expert,bold]{otf}
+\usepackage{upgreek,bm} % extra math packages
+\usepackage[deluxe,expert,bold]{otf} % Open Type font
 \renewcommand{\headfont}{\bfseries\sffamily}
-% for figures
-\usepackage{graphicx}
-\usepackage{subfigure}
-% for color
-\usepackage[usenames]{color}
+\usepackage{graphicx,subfigure} % for figures
+\usepackage[usenames]{color} % for color
 % for table
 \usepackage{booktabs}
 % hyperref for amsmath, amssymb
 \let\equation\gather\let\endequation\endgather
 % for pdf with hyperlink
-\usepackage[breaklinks=true,bookmarksnumbered=true,bookmarksopen=true,%
-colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black,%
-hyperfigures=true]{hyperref}
-\ifnum 42146=\euc"A4A2
-    \AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
+\usepackage{atbegshi}
+\ifx\ucs\undefined
+    \ifnum 42146=\euc"A4A2
+        \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+    \else
+        \AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+    \fi
 \else
-    \AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+    \AtBeginShipoutFirst{\special{pdf:tounicode UTF8-UCS2}}
 \fi
+\usepackage{hyperref}
+\hypersetup{bookmarksnumbered=true, bookmarksopen=true,
+            breaklinks=true, hyperfigures=true setpagesize=false}
 % commands
 \newcommand{\dif}[2]{\frac{d{#1}}{d{#2}}}
 \newcommand{\pdif}[2]{\frac{\partial{#1}}{\partial{#2}}}
@@ -58,7 +58,15 @@ hyperfigures=true]{hyperref}
 \author{}
 %\date{}
 
+\makeatletter
+\hypersetup{pdftitle={\@title}, pdfauthor={\@author{}}}
+\makeatother
+
 \maketitle
+
+\begin{abstract}
+
+\end{abstract}
 
 
 \end{document}
