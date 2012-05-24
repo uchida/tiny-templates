@@ -16,6 +16,7 @@ include_dirs := $(modules)
 CPPFLAGS += $(addprefix -I,$(include_dirs))
 
 # default target
+.PHONY: default
 default: all
 
 # include config.mk for modules
